@@ -16,3 +16,13 @@ Flex goals:
 + Make the Sudoku puzzles "good" like outlined on this paper: [chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.sudokuwiki.org/Sudoku_Creation_and_Grading.pdf](https://www.sudokuwiki.org/Sudoku_Creation_and_Grading.pdf)
 
 I will be using https://github.com/norvig/pytudes/blob/main/ipynb/Sudoku.ipynb as a guide for when I get stumped, so thank you very much to Peter Norvig for the help.
+
+
+Terms I am using:
++ Board: The full Sudoku board
++ Regular Board: a 9x9 Sudoku board, which is the regular size for one
++ Length: the length of one side of the board, which should be equal to the other side
++ Square: the subgrid of a sudoku board, that is  the sqrt of the length of the board (in a 9x9 board there are 9 3x3 squares)
++ Cell: The single digit in a board (in a 9x9 board there are 81 cells, or 9 cells per square)
++ N: Usually I will use this to denote the length (also shown as 'n')
++ Amount: shorthand for how many cells are in a set area, it should always be equal to length squared. 

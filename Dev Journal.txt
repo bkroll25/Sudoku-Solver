@@ -1,0 +1,26 @@
+This is the first time I have tried to do a dev journal, so hopefully it is legible.
+
+1/13/2025:
+Goals:
++ Create a menu system to specify sizes of Sudoku boards and/or difficulty
++ Start on creating a data structure for Sudoku boards
+
+Completed:
++ Menu system created
++ Data Structure started - but iteration is needed to fully finish it
++ Started on printing out boards
+
+Thoughts:
++ The only potential boards are ones that are perfect squares, otherwise the Squares (subgrids) wouldn't work.
+  So some potential sizes to start with are 4x4, 16x16, 25x25, 36x36, etc.
+  + Also it doesn't work if it is not a square (ex: 9x8) as the numbers don't match up (there's no reason to have a 9 in a row of 8)
++ I'm not really sure of what else to include in the menu system, though maybe that will change later
++ It'd probably be nice to track how long the algorithm takes to generate and solve sudoku puzzles
+  + Especially since I'll eventually run into a problem with how long it takes
++ In the future I need to commit smaller and more often, this one is quite the big commit
+
+Future goals:
++ Finish being able to print out boards
++ Print out a board of all 0's
++ Generate a filled board
++ Remove some cells numbers to create an actual puzzle
