@@ -8,6 +8,38 @@
 using namespace std;
 
 //Data structures:
+//The individual Cell
+class Cell{
+    public:
+        int value; 
+
+    //Constructors:
+    Cell(){
+        int value = 0;
+    }
+    Cell(int num){
+        int value = num;
+    }
+};
+
+//The subgrid thats the sqrt of the boards size:
+class Square{
+    public:
+        int length;
+        int amount;
+        vector<Cell> cells;
+
+    //Constructors
+    Square(){
+        length = 3;
+        amount = length * length;
+    }
+    Square(int len){
+        length = len;
+        amount = length * length;
+    }
+};
+
 //The full Sudoku board
 class Board{
     public:
@@ -28,36 +60,6 @@ class Board{
     Board(int len){
         length = len;
         amount = length * length;
-    }
-};
-
-//The subgrid thats the sqrt of the boards size:
-class Square{
-    int length;
-    int amount;
-    vector<Cell> cells;
-
-    //Constructors
-    Square(){
-        length = 3;
-        amount = length * length;
-    }
-    Square(int len){
-        length = len;
-        amount = length * length;
-    }
-};
-
-//The individual Cell
-class Cell{
-    int value; 
-
-    //Constructors:
-    Cell(){
-        int value = 0;
-    }
-    Cell(int num){
-        int value = num;
     }
 };
 

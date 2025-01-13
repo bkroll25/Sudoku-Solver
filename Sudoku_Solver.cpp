@@ -26,6 +26,8 @@ void menu(){
         //Actual Menu:
         if(userInput == '1'){
             //9x9 Sudoku Board
+            Board sudoku;
+            printBoard(sudoku);
 
         }else if(userInput == '2'){
             //nxn Sudoku Board

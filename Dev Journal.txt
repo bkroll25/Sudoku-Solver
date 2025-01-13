@@ -1,6 +1,6 @@
 This is the first time I have tried to do a dev journal, so hopefully it is legible.
 
-1/13/2025:
+1/13/2025 Approx 2:00 AM-3:00 AM and 10:00 AM to 4:00 PM (only in between classes):
 Goals:
 + Create a menu system to specify sizes of Sudoku boards and/or difficulty
 + Start on creating a data structure for Sudoku boards
@@ -24,3 +24,26 @@ Future goals:
 + Print out a board of all 0's
 + Generate a filled board
 + Remove some cells numbers to create an actual puzzle
+------------------------------------------------------------------------------------------------------------------------------------------
+
+1/13/2025 5:51 PM - 6:03 PM
+I am able to work a small bit in between some of my actual job and dinner, 
+but I don't expect to get a crap ton done right now.
+
+Goals:
++ Print out a Sudoku Board of all 0's
+
+Completed:
++ Printing is implemented into the Menu
+
+Thoughts:
++ The printing will work as soon as I get the board to construct the Squares and the Squares to construct the cells
+  Right now they are just empty Vectors I think. That will be a project for either after dinner or tomorrow.
++ Had less time than I expected so I couldn't really get anything done.
++ With two files it makes running the code a bit more annoying so I might need to look more into object files or 
+  other ways or running more than one code. Right now I am just using the terminal and manually running Sudoku_Solver and Sudoku.cpp.
+  Maybe making a makefile wouldn't be a bad idea?
+
+Future Goals:
++ Print the board
++ Add a way to run the files easier (makefile, object files, something)

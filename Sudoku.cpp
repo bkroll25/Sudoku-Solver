@@ -12,8 +12,9 @@
 void printBoard(Board sudoku){
     //Iterate over entire board:
     for(int x = 0; x < sudoku.length; x++){
-        for(int y = 0; y < sudoku.length; y++){
-            cout<<sudoku.
+        for(int y = 0; y < sudoku.squares[x].amount; y++){
+            cout<<sudoku.squares[x].cells[y].value;
         }
+        cout<<endl;
     }
 }
