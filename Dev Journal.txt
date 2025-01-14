@@ -47,3 +47,22 @@ Thoughts:
 Future Goals:
 + Print the board
 + Add a way to run the files easier (makefile, object files, something)
+------------------------------------------------------------------------------------------------------------------------------------------
+
+1/14/2025 9:31
+Working some in between class, we'll see how much I can do
+Goals:
++ Print out a Sudoku Board of all 0's
+
+Completed:
++ Printed out a Sudoku board of all 0's
+
+Thoughts:
++ Similar to what I thought, it was mostly just making sure the Squares and Cells
+  were actually constructed, and then making it look nice
++ Squares should be pretty easy to search though, but I'm still thinking on how to do row and column
+  Making it a 2D array might make those easier, but I would have to change all of my code for that
+
+Future Goals:
++ Generate random numbers
++ Make helper functions to check row, column and sqaure

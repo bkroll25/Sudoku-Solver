@@ -4,6 +4,7 @@
 #include <iostream>
 #include <time.h>
 #include <vector>
+#include <cmath>
 
 using namespace std;
 
@@ -15,10 +16,10 @@ class Cell{
 
     //Constructors:
     Cell(){
-        int value = 0;
+        value = 0;
     }
     Cell(int num){
-        int value = num;
+        value = num;
     }
 };
 
@@ -33,10 +34,12 @@ class Square{
     Square(){
         length = 3;
         amount = length * length;
+        cells.resize(amount, Cell());
     }
     Square(int len){
         length = len;
         amount = length * length;
+        cells.resize(amount, Cell());
     }
 };
 
@@ -56,10 +59,12 @@ class Board{
     Board(){
         length = 9;
         amount = length * length;
+        squares.resize(length, Square(3));
     }
     Board(int len){
         length = len;
         amount = length * length;
+        squares.resize(length, Square(sqrt(length)));
     }
 };
 
