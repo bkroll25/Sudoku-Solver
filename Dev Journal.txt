@@ -49,7 +49,7 @@ Future Goals:
 + Add a way to run the files easier (makefile, object files, something)
 ------------------------------------------------------------------------------------------------------------------------------------------
 
-1/14/2025 9:31
+1/14/2025 9:31 AM - 10:00 AM
 Working some in between class, we'll see how much I can do
 Goals:
 + Print out a Sudoku Board of all 0's
@@ -65,4 +65,22 @@ Thoughts:
 
 Future Goals:
 + Generate random numbers
-+ Make helper functions to check row, column and sqaure
++ Make helper functions to check row, column and square
+------------------------------------------------------------------------------------------------------------------------------------------
+
+1/14/2025 3:33 PM - 4:24
+Goals:
++ Generate random numbers
++ Make helper functions to check row, column and square
+
+Completed:
++ Generates filled Sudoku Puzzles
+
+Thoughts:
++ Used some AI to help organize my thoughts and code, though I'm going to try to use it as little as possible
++ As far as I can tell these puzzles are working perfectly well
++ I should probably separate in Board a "solution" and a "puzzle" array where solution is the filled one and puzzle is where some are removed
+
+Future Goals:
++ Remove some numbers from the filled puzzles
+------------------------------------------------------------------------------------------------------------------------------------------

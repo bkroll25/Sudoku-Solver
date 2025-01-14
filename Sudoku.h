@@ -5,6 +5,8 @@
 #include <time.h>
 #include <vector>
 #include <cmath>
+#include <algorithm>
+#include <random>
 
 using namespace std;
 
@@ -49,11 +51,13 @@ class Board{
         int length;
         int amount;
         vector<Square> squares;
+        bool isValid(int row, int col, int num);
+        bool inSquare(int row, int col, int num);
+        bool inRow(int row, int num);
+        bool inCol(int col, int num);
 
-    bool isValid(int row, int col);
-    bool inRow(int num);
-    bool inCol(int num);
-    bool inSquare(int row, int col, int num);
+        bool fillBoard(int row, int col);
+        void generateFilledBoard();
 
     //Constructors:
     Board(){
@@ -70,6 +74,5 @@ class Board{
 
 //Helper functions:
 void printBoard(Board sudoku);
-
 
 #endif

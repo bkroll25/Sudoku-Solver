@@ -1,4 +1,5 @@
 #include <iostream>
+#include <random>
 #include "Sudoku.h"
 
 using namespace std;
@@ -27,7 +28,9 @@ void menu(){
         if(userInput == '1'){
             //9x9 Sudoku Board
             Board sudoku;
+            sudoku.generateFilledBoard();
             printBoard(sudoku);
+            cout<<endl;
 
         }else if(userInput == '2'){
             //nxn Sudoku Board
