@@ -50,7 +50,9 @@ class Board{
     public:
         int length;
         int amount;
-        vector<Square> squares;
+        vector<Square> solution;
+        vector<Square> puzzle;
+
         bool isValid(int row, int col, int num);
         bool inSquare(int row, int col, int num);
         bool inRow(int row, int num);
@@ -58,21 +60,26 @@ class Board{
 
         bool fillBoard(int row, int col);
         void generateFilledBoard();
+        void generatePuzzle(int blanks);
 
     //Constructors:
     Board(){
         length = 9;
         amount = length * length;
-        squares.resize(length, Square(3));
+        solution.resize(length, Square(3));
+        
+        this->generateFilledBoard();
     }
     Board(int len){
         length = len;
         amount = length * length;
-        squares.resize(length, Square(sqrt(length)));
+        solution.resize(length, Square(sqrt(length)));
+
+        this->generateFilledBoard();
     }
 };
 
 //Helper functions:
-void printBoard(Board sudoku);
+void printBoard(vector<Square> sudoku, int length);
 
 #endif

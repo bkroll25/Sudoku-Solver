@@ -9,9 +9,9 @@
 */
 
 //Takes in a board and prints it out
-void printBoard(Board sudoku){
-    int subGridSize = sudoku.squares[0].length; //Subgrid size (e.g., 3 for standard Sudoku)
-    int gridSize = sudoku.length;              //Full grid size (e.g., 9 for standard Sudoku)
+void printBoard(vector<Square> sudoku, int length){
+    int subGridSize = sudoku[0].length; //Subgrid size (e.g., 3 for standard Sudoku)
+    int gridSize = length;       //Full grid size (e.g., 9 for standard Sudoku)
 
     for(int row = 0; row < gridSize; row++){
         //Print a horizontal line between subgrids:
@@ -36,7 +36,14 @@ void printBoard(Board sudoku){
             int cellIndex = cellRow * subGridSize + cellCol;
 
             //Print the cell value:
-            cout<<sudoku.squares[squareIndex].cells[cellIndex].value<<" ";
+            int value = sudoku[squareIndex].cells[cellIndex].value;
+
+            //Map 0's to "."
+            if(value == 0){
+                cout<<". ";
+            }else{
+                cout<<value<<" ";
+            }
         }
         cout<<endl;
     }
@@ -55,7 +62,7 @@ bool Board::inRow(int row, int num){
     for(int col = 0; col < length; col++){
         int squareIndex = (row / gridSize) * gridSize + (col / gridSize);
         int cellIndex = (row % gridSize) * gridSize + (col % gridSize);
-        if(squares[squareIndex].cells[cellIndex].value == num){
+        if(solution[squareIndex].cells[cellIndex].value == num){
             return true;
         }
     }
@@ -69,7 +76,7 @@ bool Board::inCol(int col, int num){
     for(int row = 0; row < length; ++row){
         int squareIndex = (row / gridSize) * gridSize + (col / gridSize);
         int cellIndex = (row % gridSize) * gridSize + (col % gridSize);
-        if(squares[squareIndex].cells[cellIndex].value == num){
+        if(solution[squareIndex].cells[cellIndex].value == num){
             return true;
         }
     }
@@ -82,8 +89,8 @@ bool Board::inCol(int col, int num){
 bool Board::inSquare(int row, int col, int num){
     int gridSize = sqrt(length);
     int squareIndex = (row / gridSize) * gridSize + (col / gridSize);
-    for(int i = 0; i < squares[squareIndex].amount; ++i){
-        if(squares[squareIndex].cells[i].value == num){
+    for(int i = 0; i < solution[squareIndex].amount; ++i){
+        if(solution[squareIndex].cells[i].value == num){
             return true;
         }
     }
@@ -116,14 +123,14 @@ bool Board::fillBoard(int row = 0, int col = 0){
             int gridSize = sqrt(length);
             int squareIndex = (row / gridSize) * gridSize + (col / gridSize);
             int cellIndex = (row % gridSize) * gridSize + (col % gridSize);
-            squares[squareIndex].cells[cellIndex].value = num;
+            solution[squareIndex].cells[cellIndex].value = num;
             
             //Recursively try to fill the rest of the board
             if(fillBoard(nextRow, nextCol))
                 return true;
 
             //Undo assignment if it leads to no solution
-            squares[squareIndex].cells[cellIndex].value = 0;
+            solution[squareIndex].cells[cellIndex].value = 0;
         }
     }
     return false; //Backtrack
@@ -131,4 +138,33 @@ bool Board::fillBoard(int row = 0, int col = 0){
 
 void Board::generateFilledBoard(){
     fillBoard();
+}
+
+//Generates a puzzle from a solution
+void Board::generatePuzzle(int blanks){
+    puzzle = solution;
+
+    //Create a list of all cell indices for random selection
+    vector<int> cellIndices(this->amount);
+    for(int x = 0; x < this->amount; x++){
+        cellIndices[x] = x;
+    }
+
+    //Randomly shuffle the indices
+    random_device rd;
+    mt19937 rng(rd());
+    shuffle(cellIndices.begin(), cellIndices.end(), rng);
+
+    //Remove numbers by setting cells to 0
+    for(int x = 0; x < blanks; x++){
+        int cellIndex = cellIndices[x];
+
+        //Calculate the square and cell indices
+        int gridSize = sqrt(length);
+        int squareIndex = (cellIndex / length) / gridSize * gridSize + (cellIndex % length) / gridSize;
+        int cellInSquare = (cellIndex / length) % gridSize * gridSize + (cellIndex % length) % gridSize;
+
+        //Set the cell in the puzzle to 0
+        puzzle[squareIndex].cells[cellInSquare].value = 0;
+    }
 }
