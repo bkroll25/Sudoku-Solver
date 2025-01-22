@@ -16,6 +16,10 @@ class Cell{
     public:
         int value; 
 
+        bool operator==(const Cell& other) const {
+            return value == other.value;
+        }
+
     //Constructors:
     Cell(){
         value = 0;
@@ -31,6 +35,10 @@ class Square{
         int length;
         int amount;
         vector<Cell> cells;
+
+        bool operator==(const Square& other) const{
+            return cells == other.cells;
+        }
 
     //Constructors
     Square(){

@@ -93,9 +93,26 @@ Completed:
 
 Thoughts:
 + 39 is the suggested amount of hints for a 9x9 sudoku puzzle, as it still allows a single solution
-+ How would this be for a different size puzzle? I'll need to figure out how to find it 
++ How would hints be determined for a different size puzzle? I'll need to figure out how to find it 
   mathmatically for later on in this project
++ Maybe something like 49% (39 is 48.14%) of the cells are hints?
 
 Future Goals:
 + Start solving
 ------------------------------------------------------------------------------------------------------------------------------------------
+1/21/2025 3:45 PM - 4:30 PM
+Took a bit of a break due to 3-day weekend and also just not wanting to get burntout on one project
+Goals:
++ Solve a basic 9x9 puzzle
+
+Completed:
++ Solve a 9x9 puzzle?
+
+Thoughts:
++ As far as I can tell the code should work, but is so unbelievablely slow that I can't tell
+  I even tested with only three blanks and it didn't output
+  It might be a loop error or something too
+
+Future Goals:
++ OPTIMIZATION OPTIMIZATION OPTIMIZATION
++ Bug fixing?
